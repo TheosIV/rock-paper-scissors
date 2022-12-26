@@ -1,4 +1,3 @@
-
 //getComputerChoice function works as expected.
 function getComputerChoice() {
    let random123 = Math.floor(Math.random()*3+1);
@@ -11,7 +10,7 @@ function getComputerChoice() {
    }
 }
 
-// getPlayerChoice function works as expected.
+//getPlayerChoice function works as expected.
 function getPlayerChoice(string) {
     let strLower = string.toLowerCase();
     return strLower.charAt(0).toUpperCase() + strLower.slice(1);
@@ -35,3 +34,41 @@ function playRound(computerSelection, playerSelection) {
         return 0;
     } else {console.log("Please choose between Rock, Paper, or scissors.")}
 }
+
+//game function works as expected.
+function game() {
+    let playerInput;
+    let playerSelection = undefined;
+    const computerSelection = getComputerChoice();
+    let computerScore = 0;
+    let playerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playerInput = prompt("Type your rock, paper, or scissors: ");
+        playerSelection = getPlayerChoice(playerInput);
+        const round = playRound(computerSelection, playerSelection);
+        if (round === 1) {
+            ++playerScore;
+            console.log("You win the round!");
+        } else if (round === 0) {
+            ++computerScore;
+            console.log("You lose the round!");
+        } else {
+            ++playerScore;
+            ++computerScore;
+            console.log("It's a tie, this round!");
+        }
+    }
+
+    if (playerScore > computerScore) {
+        console.log("You win the game!");
+    }else if (playerScore === computerScore) {
+        console.log("It's a tie, this game!");
+    }else {
+        console.log("You lose the game!");
+    }
+
+    return `Player|${playerScore}:${computerScore}|Computer`;
+}
+
+console.log(game());
