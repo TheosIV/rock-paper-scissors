@@ -32,7 +32,10 @@ function playRound(computerSelection, playerSelection) {
         return 0;
     } else if (computerSelection === "Rock" && playerSelection === "Scissors"){
         return 0;
-    } else {console.log("Please choose between Rock, Paper, or scissors.")}
+    } else {
+        console.log("Please choose between Rock, Paper, or scissors.");
+        return -1;
+    }
 }
 
 //game function works as expected.
@@ -51,13 +54,15 @@ function game() {
         if (round === 1) {
             ++playerScore;
             console.log("You win the round!");
-        } else if (round === 0) {
+        }else if (round === 0) {
             ++computerScore;
             console.log("You lose the round!");
-        } else {
+        }else if (round === 2) {
             ++playerScore;
             ++computerScore;
             console.log("It's a tie, this round!");
+        }else {
+            i--;
         }
     }
 
