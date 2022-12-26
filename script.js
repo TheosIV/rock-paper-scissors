@@ -38,14 +38,15 @@ function playRound(computerSelection, playerSelection) {
 //game function works as expected.
 function game() {
     let playerInput;
-    let playerSelection = undefined;
-    const computerSelection = getComputerChoice();
+    let playerSelection;
+    let computerSelection;
     let computerScore = 0;
     let playerScore = 0;
 
     for (let i = 0; i < 5; i++) {
         playerInput = prompt("Type your rock, paper, or scissors: ");
         playerSelection = getPlayerChoice(playerInput);
+        computerSelection = getComputerChoice();
         const round = playRound(computerSelection, playerSelection);
         if (round === 1) {
             ++playerScore;
