@@ -5,9 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
+    <div id="main-container">
+        <div id="top-bar-container">
+            <div class="player-vs-computer">
+                <div>
+                    <img src="./images/icon.png" alt="Player Icon" width="40px">
+                </div>
+                <h5>Player :</h5>
+                <h4 id="player-score">0</h4>
+            </div>
+            <div class="player-vs-computer" id="vs">
+                <h5>VS</h5>
+            </div>
+            <div class="player-vs-computer">
+                <h4 id="computer-score">0</h4>
+                <h5>: Computer</h5>
+                <div>
+                    <img src="./images/icon.png" alt="Player Icon" width="40px">
+                </div>
+            </div>
+        </div>
+
+        <div id="main-content-container">
+            <div id="announcement-container">
+                <h1 id="announcement">Choose Your Weapon.</h1>
+            </div>
+            <div id="choices-container">
+                <div class="choice">
+                    <div class="clicker Rock"></div>
+                    <img src="./images/rock.png" alt="Rock" width="100px">
+                    <h3>Rock</h3>
+                </div>
+                <div class="choice">
+                    <div class="clicker Paper"></div>
+                    <img src="./images/paper.png" alt="Paper" width="100px">
+                    <h3>Paper</h3>
+                </div>
+                <div class="choice">
+                    <div class="clicker Scissors"></div>
+                    <img src="./images/scissors.png" alt="Scissors" width="100px">
+                    <h3>Scissors</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameover-container">
+        <h1 id="game-over">GAME OVER!</h1>
+        <h2 id="winner"></h2>
+        <button id="try-again">Try Again?</button>
+    </div>
     
 </body>
 </html>
